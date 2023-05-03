@@ -1,3 +1,4 @@
+```ruby
 /*
 1st round picks of the NFL 2023 Draft
 Collected by: Brandon Le
@@ -73,3 +74,4 @@ INSERT INTO picks (pick_number, name, college, picked_by, position)
 	VALUES(30,"Nolan Smith","Georgia","Philadelphia Eagles","OLB");
 INSERT INTO picks (pick_number, name, college, picked_by, position)
 	VALUES(31,"Felix Anudike-Uzomah","Kansas State","Kansas City Chiefs","OLB");
+```
