@@ -1,0 +1,75 @@
+/*
+1st round picks of the NFL 2023 Draft
+Collected by: Brandon Le
+*/
+
+CREATE TABLE picks(
+	id INTEGER PRIMARY KEY,
+	pick_number INTEGER,
+	name TEXT,
+	college TEXT,
+	picked_by TEXT,
+	position TEXT);
+
+INSERT INTO picks (pick_number, name, college, picked_by, position)
+	VALUES(1,"Bryce Young","Alabama","Carolina Panthers","QB");
+INSERT INTO picks (pick_number, name, college, picked_by, position)
+	VALUES(2,"C.J. Stroud","Ohio State","Houston Texans","QB");
+INSERT INTO picks (pick_number, name, college, picked_by, position)
+	VALUES(3,"Will Anderson Jr.","Alabama","Houston Texans","OLB");
+INSERT INTO picks (pick_number, name, college, picked_by, position)
+	VALUES(4,"Anthony Richardson","Florida","Indianapolis Colts","QB");
+INSERT INTO picks (pick_number, name, college, picked_by, position)
+	VALUES(5,"Devon Witherspoon","Illinois","Seattle Seahawks","CB");
+INSERT INTO picks (pick_number, name, college, picked_by, position)
+	VALUES(6,"Paris Johnson Jr.","Ohio State","Arizona Cardinals","OT");
+INSERT INTO picks (pick_number, name, college, picked_by, position)
+	VALUES(7,"Tyree Wilson","Texas Tech","Las Vegas Raiders","OLB");
+INSERT INTO picks (pick_number, name, college, picked_by, position)
+	VALUES(8,"Bijan Robinson","Texas","Atlanta Falcons","RB");
+INSERT INTO picks (pick_number, name, college, picked_by, position)
+	VALUES(9,"Jalen Carter","Georgia","Philadelphia Eagles","DT");
+INSERT INTO picks (pick_number, name, college, picked_by, position)
+	VALUES(10,"Darnell Wright","Tennessee","Chicago Bears","OT");
+INSERT INTO picks (pick_number, name, college, picked_by, position)
+	VALUES(11,"Peter Skoronski","Northwestern","Tennessee Titans","OT");
+INSERT INTO picks (pick_number, name, college, picked_by, position)
+	VALUES(12,"Jahmyr Gibbs","Alabama","Detroit Lions","RB");
+INSERT INTO picks (pick_number, name, college, picked_by, position)
+	VALUES(13,"Lukas Van Ness","Iowa","Green Bay Packers","OLB");
+INSERT INTO picks (pick_number, name, college, picked_by, position)
+	VALUES(14,"Broderick Jones","Georgia","Pittsburgh Steelers","OT");
+INSERT INTO picks (pick_number, name, college, picked_by, position)
+	VALUES(15,"Will McDonald IV","Iowa State","New York Jets","OLB");
+INSERT INTO picks (pick_number, name, college, picked_by, position)
+	VALUES(16,"Emmanuel Forbes","Mississippi State","Washington Commanders","CB");
+INSERT INTO picks (pick_number, name, college, picked_by, position)
+	VALUES(17,"Christian Gonzalez","Oregon","New England Patriots",  "CB");
+INSERT INTO picks (pick_number, name, college, picked_by, position)
+	VALUES(18,"Jack Campbell","Iowa","Detroit Lions","LB");
+INSERT INTO picks (pick_number, name, college, picked_by, position)
+	VALUES(19,"Calijah Kancey","Pitt","Tampa Bay Buccaneers","DT");
+INSERT INTO picks (pick_number, name, college, picked_by, position)
+	VALUES(20,"Jaxon Smith-Njigba","Ohio State","Seattle Seahawks","WR");
+INSERT INTO picks (pick_number, name, college, picked_by, position)
+	VALUES(21,"Quentin Johnston","Texas Christian","Los Angeles Chargers","WR");
+INSERT INTO picks (pick_number, name, college, picked_by, position)
+	VALUES(22,"Zay Flowers","Boston College","Baltimore Ravens","WR");
+INSERT INTO picks (pick_number, name, college, picked_by, position)
+	VALUES(23,"Jordan Addison","Southern California","Minnesota Vikings","WR");
+INSERT INTO picks (pick_number, name, college, picked_by, position)
+	VALUES(24,"Deonte Banks","Maryland","New York Giants","CB");
+INSERT INTO picks (pick_number, name, college, picked_by, position)
+	VALUES(25,"Dalton Kincaid","Utah","Buffalo Bills","TE");
+INSERT INTO picks (pick_number, name, college, picked_by, position)
+	VALUES(26,"Mazi Smith","Michigan","Dallas Cowboys","DT");
+INSERT INTO picks (pick_number, name, college, picked_by, position)
+	VALUES(27,"Anton Harrison","Oklahoma","Jacksonville Jaguars","OT");
+INSERT INTO picks (pick_number, name, college, picked_by, position)
+	VALUES(28,"Myles Murphy","Clemson","Cincinnati Bengals","OLB");
+INSERT INTO picks (pick_number, name, college, picked_by, position)
+	VALUES(29,"Bryan Bresee","Clemson","New Orleans Saints","DT");
+INSERT INTO picks (pick_number, name, college, picked_by, position)
+	VALUES(30,"Nolan Smith","Georgia","Philadelphia Eagles","OLB");
+INSERT INTO picks (pick_number, name, college, picked_by, position)
+	VALUES(31,"Felix Anudike-Uzomah","Kansas State","Kansas City Chiefs","OLB");
