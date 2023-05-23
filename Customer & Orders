@@ -1,0 +1,7 @@
+/*Data: https://www.dropbox.com/s/cvsasmtr8syq2c2/BIT_DB?dl=0*/
+''' SQL
+SELECT COUNT(orderID)
+FROM BIT_DB.JanSales
+WHERE length(orderID) = 6
+AND orderID <> 'Order ID'
+'''
