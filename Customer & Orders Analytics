@@ -1,0 +1,54 @@
+#For this SQL, I'm querying a database with multiple tables in it to quantify statistics about customer and order data.
+
+1. How many orders were placed in January? 
+SELECT COUNT(orderID)
+FROM BIT_DB.JanSales
+WHERE length(orderID) = 6
+AND orderID <> 'Order ID'
+  COUNT(orderID) = 9681
+
+2. How many of those orders were for an iPhone?
+SELECT COUNT(orderID)
+FROM BIT_DB.JanSales
+WHERE length(orderID) = 6
+AND orderID <> 'Order ID' AND Product = 'iPhone'
+  COUNT(orderID) = 379
+  
+3. Select the customer account numbers for all the orders that were placed in February.
+SELECT distinct acctnum
+FROM BIT_DB.customers AS Customer
+INNER JOIN BIT_DB.FebSales AS Feb
+ON Customer.order_id = Feb.orderID
+WHERE length(orderID) = 6
+AND orderID <> 'Order ID'
+
+4. Which product was the cheapest one sold in January, and what was the price?
+SELECT Product, MIN(price)
+FROM BIT_DB.JanSales
+WHERE length(orderID) = 6
+AND orderID <> 'Order ID'
+ANSWER: AAA Batteries (4-pack), 2.99
+
+5. What is the total revenue for each product sold in January? 
+(Revenue can be calculated using the number of products sold and the price of the products).
+SELECT Product, SUM(Quantity) * price AS Total_Revenue
+FROM BIT_DB.JanSales
+WHERE length(orderID) = 6
+AND orderID <> 'Order ID'
+GROUP BY product
+
+6. Which products were sold in February at 548 Lincoln St, Seattle, WA 98101, how many of each were sold, and what was the total revenue?
+SELECT Product, SUM(Quantity), SUM(Quantity)*price AS Renevue
+FROM BIT_DB.FebSales
+WHERE length(orderID) = 6
+AND orderID <> 'Order ID'
+AND location = '548 Lincoln St, Seattle, WA 98101'
+
+7. How many customers ordered more than 2 products at a time in February, and what was the average amount spent by those customers?
+SELECT COUNT(DISTINCT Customer.acctnum), AVG(Quantity*price)
+FROM BIT_DB.FebSales AS Feb
+LEFT JOIN BIT_DB.customers AS Customer
+ON Feb.orderid = Customer.order_id
+WHERE LENGTH(orderid) = 6
+AND orderID <> 'Order ID'
+AND Feb.Quantity > 2
