@@ -5,14 +5,12 @@ SELECT COUNT(orderID)
 FROM BIT_DB.JanSales
 WHERE length(orderID) = 6
 AND orderID <> 'Order ID'
-  COUNT(orderID) = 9681
 
 2. How many of those orders were for an iPhone?
 SELECT COUNT(orderID)
 FROM BIT_DB.JanSales
 WHERE length(orderID) = 6
 AND orderID <> 'Order ID' AND Product = 'iPhone'
-  COUNT(orderID) = 379
   
 3. Select the customer account numbers for all the orders that were placed in February.
 SELECT distinct acctnum
@@ -27,7 +25,6 @@ SELECT Product, MIN(price)
 FROM BIT_DB.JanSales
 WHERE length(orderID) = 6
 AND orderID <> 'Order ID'
-ANSWER: AAA Batteries (4-pack), 2.99
 
 5. What is the total revenue for each product sold in January? 
 (Revenue can be calculated using the number of products sold and the price of the products).
