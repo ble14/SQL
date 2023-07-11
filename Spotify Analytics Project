@@ -1,0 +1,65 @@
+# Downloaded a Spotify top 50 songs in 2021 data from Kaggle.
+# Created a table to insert the Spotify data. 
+# Performed analytics on the data using SQL.
+
+CREATE TABLE BIT_DB.Spotifydata (
+id integer PRIMARY KEY,
+artist_name varchar NOT NULL,
+track_name varchar NOT NULL,
+track_id varchar NOT NULL,
+popularity integer NOT NULL,
+danceability decimal(4,3) NOT NULL,
+energy decimal(4,3) NOT NULL,
+song_key integer NOT NULL,
+loudness decimal(5,3) NOT NULL,
+song_mode integer NOT NULL,
+speechiness decimal(5,4) NOT NULL,
+acousticness decimal(6,5) NOT NULL,
+instrumentalness decimal(8,7) NOT NULL,
+liveness decimal(5,4) NOT NULL,
+valence decimal(4,3) NOT NULL,
+tempo decimal(6,3) NOT NULL,
+duration_ms integer NOT NULL,
+time_signature integer NOT NULL )
+
+# After the table was created, I inserted the Spotify Data from a .csv file. 
+
+# Next, I explored the data using SQL.
+
+#Determine the top 10 artists by their popularity
+SELECT artist_name, track_name, popularity 
+FROM BIT_DB.Spotifydata
+ORDER BY popularity DESC
+LIMIT 10
+
+# Found the average popularity, danceability, and energy by artist and track.
+SELECT artist_name, track_name, AVG(popularity), AVG(danceability), AVG(energy) 
+FROM BIT_DB.Spotifydata
+GROUP BY artist_name, track_name
+
+# Determined the 5 least popular songs from the list by artist, track, and popularity.
+SELECT artist_name, track_name, popularity 
+FROM BIT_DB.Spotifydata
+ORDER BY popularity ASC
+LIMIT 5
+
+# Found the average popularity of artists based on their songs that made it to the top 50 list.
+SELECT artist_name, ROUND(AVG(popularity), 2) AS popularity
+FROM BIT_DB.Spotifydata
+GROUP BY artist_name
+ORDER BY AVG(popularity) DESC
+
+# Determined the top 10 longest duration tracks.
+SELECT artist_name, track_name, duration_ms
+FROM BIT_DB.Spotifydata
+ORDER BY duration_ms DESC
+LIMIT 10
+
+# Finally, found the average danceability based on the top 10 songs.
+SELECT AVG(danceability)
+FROM BIT_DB.Spotifydata
+WHERE(
+SELECT danceability
+FROM BIT_DB.Spotifydata
+ORDER BY danceability DESC
+LIMIT 10)
