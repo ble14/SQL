@@ -1,5 +1,5 @@
 # Downloaded a Spotify top 50 songs in 2021 data from Kaggle.
-# Created a table to insert the Spotify data. A
+# Created a table to insert the Spotify data.
 # Performed analytics on the data using SQL.
 
 CREATE TABLE BIT_DB.Spotifydata (
