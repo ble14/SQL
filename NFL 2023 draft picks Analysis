@@ -1,0 +1,73 @@
+# 1st round picks of the NFL 2023 Draft
+# Collected by: Brandon Le
+# Created a table of all 1st round picks from the 2023 NFL draft
+# Inserted the data into the table
+
+CREATE TABLE picks(
+	id INTEGER PRIMARY KEY,
+	pick_number INTEGER,
+	name TEXT,
+	college TEXT,
+	picked_by TEXT,
+	position TEXT);
+
+INSERT INTO picks (pick_number, name, college, picked_by, position)
+VALUES
+(1,"Bryce Young","Alabama","Carolina Panthers","QB"),
+(2,"C.J. Stroud","Ohio State","Houston Texans","QB"),
+(3,"Will Anderson Jr.","Alabama","Houston Texans","OLB"),
+(4,"Anthony Richardson","Florida","Indianapolis Colts","QB"),
+(5,"Devon Witherspoon","Illinois","Seattle Seahawks","CB"),
+(6,"Paris Johnson Jr.","Ohio State","Arizona Cardinals","OT"),
+(7,"Tyree Wilson","Texas Tech","Las Vegas Raiders","OLB"),
+(8,"Bijan Robinson","Texas","Atlanta Falcons","RB"),
+(9,"Jalen Carter","Georgia","Philadelphia Eagles","DT"),
+(10,"Darnell Wright","Tennessee","Chicago Bears","OT"),
+(11,"Peter Skoronski","Northwestern","Tennessee Titans","OT"),
+(12,"Jahmyr Gibbs","Alabama","Detroit Lions","RB"),
+(13,"Lukas Van Ness","Iowa","Green Bay Packers","OLB"),
+(14,"Broderick Jones","Georgia","Pittsburgh Steelers","OT"),
+(15,"Will McDonald IV","Iowa State","New York Jets","OLB"),
+(16,"Emmanuel Forbes","Mississippi State","Washington Commanders","CB"),
+(17,"Christian Gonzalez","Oregon","New England Patriots",  "CB"),
+(18,"Jack Campbell","Iowa","Detroit Lions","LB"),
+(19,"Calijah Kancey","Pitt","Tampa Bay Buccaneers","DT"),
+(20,"Jaxon Smith-Njigba","Ohio State","Seattle Seahawks","WR"),
+(21,"Quentin Johnston","Texas Christian","Los Angeles Chargers","WR"),
+(22,"Zay Flowers","Boston College","Baltimore Ravens","WR"),
+(23,"Jordan Addison","Southern California","Minnesota Vikings","WR"),
+(24,"Deonte Banks","Maryland","New York Giants","CB"),
+(25,"Dalton Kincaid","Utah","Buffalo Bills","TE"),
+(26,"Mazi Smith","Michigan","Dallas Cowboys","DT"),
+(27,"Anton Harrison","Oklahoma","Jacksonville Jaguars","OT"),
+(28,"Myles Murphy","Clemson","Cincinnati Bengals","OLB"),
+(29,"Bryan Bresee","Clemson","New Orleans Saints","DT"),
+(30,"Nolan Smith","Georgia","Philadelphia Eagles","OLB"),
+(31,"Felix Anudike-Uzomah","Kansas State","Kansas City Chiefs","OLB");
+
+# Conducted analysis on the data using SQL.
+
+# Who were the 3 QBs that were drafted? 
+SELECT pick_number, name, position
+FROM BIT_DB.picks
+WHERE position = 'QB'
+
+# Which colleges had the most players drafted in the first round?
+SELECT college, COUNT(college)
+FROM BIT_DB.picks
+GROUP BY college
+ORDER BY COUNT(college) DESC
+
+# Which position was drafted the most?
+SELECT position, COUNT(position)
+FROM BIT_DB.picks
+GROUP BY position
+ORDER BY COUNT(position) DESC
+LIMIT 1
+
+# How many players did each NFL team draft?
+SELECT picked_by, COUNT(picked_by)
+FROM BIT_DB.picks
+GROUP BY picked_by
+ORDER BY COUNT(picked_by) DESC
+
