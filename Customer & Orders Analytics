@@ -27,7 +27,6 @@ WHERE length(orderID) = 6
 AND orderID <> 'Order ID'
 
 5. What is the total revenue for each product sold in January? 
-(Revenue can be calculated using the number of products sold and the price of the products).
 SELECT Product, SUM(Quantity) * price AS Total_Revenue
 FROM BIT_DB.JanSales
 WHERE length(orderID) = 6
@@ -56,7 +55,7 @@ FROM BIT_DB.FebSales
 WHERE location LIKE '%Los Angeles%'
 GROUP BY Product
 
-9. Which locations in New York received at least 3 orders in January, and how many orders did they each receive? (Hint: use HAVING).
+9. Which locations in New York received at least 3 orders in January, and how many orders did they each receive?
 SELECT DISTINCT location, COUNT(orderID) AS total_orders
 FROM BIT_DB.JanSales
 WHERE location LIKE '%NY%'
